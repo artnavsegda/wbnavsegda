@@ -270,3 +270,10 @@ defineVirtualDevice("stateless_button", {
      },
    }
 });
+
+defineRule("stateless_button_control", {
+  whenChanged: "wb-mio-gpio_211:1/Counter 2", //Следим за Input 2
+  then: function (newValue, devName, cellName)  {
+    dev["stateless_button"]["switch"] = 1;
+  }
+});
