@@ -260,3 +260,13 @@ defineRule("thermostat_control", {
     }
   }
 });
+
+defineVirtualDevice("stateless_button", {
+  title: "Control stateless button",
+  cells: {
+	   press: {
+       type: "switch",
+       value: false
+     },
+   }
+});
