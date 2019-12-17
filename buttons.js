@@ -30,6 +30,10 @@ var table = [
   [3,5,6,1]
 ]
 
+table.forEach(function(value) {
+  //console.log(value);
+});
+
 function makeMotionDetector(name, timeout_ms, detector_control, relay_control) {
  var motion_timer_id = null;
  defineRule(name, {
