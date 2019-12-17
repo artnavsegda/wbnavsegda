@@ -28,7 +28,7 @@ var table = [
   [3,3,6,2],
   [3,4,6,3],
   [3,5,6,1]
-]
+];
 
 table.forEach(function(v) {
   //log(value);
