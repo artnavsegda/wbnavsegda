@@ -30,8 +30,15 @@ var table = [
   [3,5,6,1]
 ]
 
-table.forEach(function(value) {
+table.forEach(function(v) {
   //log(value);
+  defineRule("bnpress_"+v[0]+"_"+v[1], {
+      whenChanged: "wb-mio-gpio_211:"+v[0]+"/Counter "+v[1],
+      then: function(newValue, devName, cellName) {
+        //work
+      }
+    }
+  )
 });
 
 function makeMotionDetector(name, timeout_ms, detector_control, relay_control) {
