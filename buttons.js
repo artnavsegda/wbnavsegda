@@ -37,7 +37,7 @@ table.forEach(function(v) {
       then: function(newValue, devName, cellName) {
         if (!dev["wb-mio-gpio_211:"+v[0]]["DR"+v[1]])
         {
-          //work
+          dev["wb-mio-gpio_211:"+v[2]]["K"+v[3]] = !dev["wb-mio-gpio_211:"+v[2]]["K"+v[3]];
         }
       }
     }
