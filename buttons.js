@@ -31,7 +31,7 @@ var table = [
 ]
 
 table.forEach(function(value) {
-  //console.log(value);
+  //log(value);
 });
 
 function makeMotionDetector(name, timeout_ms, detector_control, relay_control) {
