@@ -7,69 +7,67 @@ var shades = [
   {name: "bedroom", dev:3, out:2, in: {addr:209, dev:1, up:11, down:12}}
 ];
 
-defineVirtualDevice("shade one", {
-    title: "control shade one",
-    cells: {
-	target: {
-	    type: "range",
-	    value : 50,
-      	max : 100
-	},
-	current: {
-	    type: "range",
-	    value : 50,
-      	max : 100,
-      	readonly : true
-	},
-    state: {
-      	type: "range",
-      	value: 2,
-      	max: 2,
-      	readonly: true
-    },
-    hold: {
-      	type: "switch",
-      	value: false
+shades.forEach(function (v) {
+  //log(v);
+  var devname = "shade "+v.name;
+  defineVirtualDevice(devname, {
+      title: "control " + devname,
+      cells: {
+  	target: {
+  	    type: "range",
+  	    value : 50,
+        	max : 100
+  	},
+  	current: {
+  	    type: "range",
+  	    value : 50,
+        	max : 100,
+        	readonly : true
+  	},
+      state: {
+        	type: "range",
+        	value: 2,
+        	max: 2,
+        	readonly: true
+      },
+      hold: {
+        	type: "switch",
+        	value: false
+      }
     }
-  }
-});
+  });
 
-var timerID = 0;
-
-defineRule("shade_one_control", {
-  whenChanged: "shade one/target",
-  then: function (newValue, devName, cellName)  {
-    if (newValue != dev["shade one"]["current"] && timerID == 0)
-    {
-      	timerID = setInterval(function(){
-          if (dev["shade one"]["current"] == dev["shade one"]["target"])
+  var timerID = 0;
+  defineRule(devname + " control", {
+    whenChanged: devname + "/target",
+    then: function (newValue, devName, cellName)  {
+      if (newValue != dev[devname]["current"] && timerID == 0)
+      {
+        timerID = setInterval(function(){
+          if (dev[devname]["current"] == dev[devname]["target"])
           {
             clearTimeout(timerID);
             timerID = 0;
-            dev["shade one"]["state"] = 2;
+            dev[devname]["state"] = 2;
           }
-          else if (dev["shade one"]["current"] > dev["shade one"]["target"])
+          else if (dev[devname]["current"] > dev[devname]["target"])
           {
-            dev["shade one"]["current"]--;
-            if (dev["shade one"]["state"] != 0)
+            dev[devname]["current"]--;
+            if (dev[devname]["state"] != 0)
             {
-            	dev["shade one"]["state"] = 0;
+            	dev[devname]["state"] = 0;
             }
           }
-          else if (dev["shade one"]["current"] < dev["shade one"]["target"])
+          else if (dev[devname]["current"] < dev[devname]["target"])
           {
-            dev["shade one"]["current"]++;
-            if (dev["shade one"]["state"] != 1)
+            dev[devname]["current"]++;
+            if (dev[devname]["state"] != 1)
             {
-            	dev["shade one"]["state"] = 1;
+            	dev[devname]["state"] = 1;
             }
           }
         },1000);
-		//dev["shade one"]["current"] = newValue;
+      }
     }
-    else
-    {
-      	//setInterval
-    }
-  }
+  });
 });

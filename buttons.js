@@ -31,7 +31,7 @@ var table = [
 ];
 
 table.forEach(function(v) {
-  //log(value);
+  //log(v);
   defineRule("bnpress_"+v[0]+"_"+v[1], {
       whenChanged: "wb-mio-gpio_211:"+v[0]+"/Counter "+v[1],
       then: function(newValue, devName, cellName) {
