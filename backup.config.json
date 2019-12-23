@@ -1,0 +1,100 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "CC:22:3D:E3:DE:30",
+        "port": 51826,
+        "pin": "031-45-155"
+    },
+    "description": "This is an example configuration file with one fake accessory and one fake platform. You can use this as a template for creating your own configuration file containing devices you actually own.",
+    "ports": {
+        "start": 52100,
+        "end": 52150,
+        "comment": "This section is used to control the range of ports that separate accessory (like camera or television) should be bind to."
+    },
+    "accessories": [
+        {
+            "accessory": "mqttthing",
+            "type": "lightbulb",
+            "name": "My lightbulb",
+            "mqttPubOptions": {
+                "retain": true
+            },
+            "logMqtt": false,
+            "topics": {
+                "getOn": "/devices/wb-mio-gpio_209:5/controls/K1",
+                "setOn": "/devices/wb-mio-gpio_209:5/controls/K1/on"
+            },
+            "integerValue": true,
+            "onlineValue": "Online"
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "outlet",
+            "name": "My Outlet",
+            "logMqtt": false,
+            "topics": {
+                "getOn": "/devices/wb-mio-gpio_209:5/controls/K2",
+                "setOn": "/devices/wb-mio-gpio_209:5/controls/K2/on",
+                "getWatts": "/devices/wb-map6s_22/controls/P 1",
+                "getVolts": "/devices/wb-map6s_22/controls/Urms",
+                "getAmperes": "/devices/wb-map6s_22/controls/Irms 1",
+                "getTotalConsumption": "/devices/wb-map6s_22/controls/AP energy 1"
+            },
+            "integerValue": true,
+            "history": true
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "carbonDioxideSensor",
+            "name": "My CO2 sensor",
+            "logMqtt": false,
+            "topics": {
+                "getCarbonDioxideDetected": "/devices/co2_alarm/controls/enabled",
+                "getCarbonDioxideLevel": "/devices/wb-msw-v3_135/controls/CO2"
+            },
+            "carbonDioxideDetectedValues": [
+                "0",
+                "1"
+            ]
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "motionSensor",
+            "name": "My Motion Sensor",
+            "logMqtt": false,
+            "topics": {
+                "getMotionDetected": "/devices/motion_detect/controls/enabled"
+            },
+            "integerValue": true,
+            "history": true
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "temperatureSensor",
+            "name": "My Temperature",
+            "logMqtt": false,
+            "topics": {
+                "getCurrentTemperature": "/devices/hwmon/controls/Board Temperature"
+            },
+            "history": true
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "My Shade",
+            "logMqtt": true,
+            "topics": {
+                "getCurrentPosition": "/devices/shade one/controls/current",
+                "setTargetPosition": "/devices/shade one/controls/target/on",
+                "getTargetPosition": "/devices/shade one/controls/target",
+                "getPositionState": "/devices/shade one/controls/state"
+            },
+            "positionStateValues": [
+                0,
+                1,
+                2
+            ]
+        }
+    ],
+    "platforms": []
+}

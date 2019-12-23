@@ -1,0 +1,274 @@
+{
+ "device_type": "MH-RC-MBS-1",
+ "device": {
+  "name": "MH-RC-MBS-1",
+  "id": "mh-rc-mbs-1",
+  "max_read_registers": 60,
+  "channels": [
+     {
+      "name": "AC unit on off",
+      "reg_type": "holding",
+      "address": "0x0",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC unit mode",
+      "reg_type": "holding",
+      "address": "0x1",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC unit Fan Speed",
+      "reg_type": "holding",
+      "address": "0x2",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC unit Vane Position",
+      "reg_type": "holding",
+      "address": "0x3",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC unit Temperature Setpoint",
+      "reg_type": "holding",
+      "address": "0x4",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC unit Temperature Reference",
+      "reg_type": "holding",
+      "address": "0x5",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Window Contact",
+      "reg_type": "holding",
+      "address": "0x6",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "MH-RC-MBS-1 Disablement",
+      "reg_type": "holding",
+      "address": "0x7",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC Remote Control Disablement",
+      "reg_type": "holding",
+      "address": "0x8",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC unit Operation Time",
+      "reg_type": "holding",
+      "address": "0x9",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC unit Alarm Status",
+      "reg_type": "holding",
+      "address": "0xa",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Error Code",
+      "reg_type": "holding",
+      "address": "0xb",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Indoor unit ambient temperature from external sensor",
+      "reg_type": "holding",
+      "address": "0x16",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "AC Real temperature setpoint",
+      "reg_type": "holding",
+      "address": "0x17",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Current AC max setpoint",
+      "reg_type": "holding",
+      "address": "0x18",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Current AC min setpoint",
+      "reg_type": "holding",
+      "address": "0x19",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Status (feedback)",
+      "reg_type": "holding",
+      "address": "0x1f",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Center Remote",
+      "reg_type": "holding",
+      "address": "0x2e",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Under voltage counter",
+      "reg_type": "holding",
+      "address": "0x37",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Outdoor Intake temperature",
+      "reg_type": "holding",
+      "address": "0x3c",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Input reference temperature",
+      "reg_type": "holding",
+      "address": "0x41",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Return Path temperature",
+      "reg_type": "holding",
+      "address": "0x42",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Return Path temperature",
+      "reg_type": "holding",
+      "address": "0x42",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Block Periodic Sendings",
+      "reg_type": "holding",
+      "address": "0x61",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Master/Slave (gateway)",
+      "reg_type": "holding",
+      "address": "0x62",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Open Window switch-off timeout",
+      "reg_type": "holding",
+      "address": "0x0D",
+      "type": "range",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Modbus RTU baud-rate",
+      "reg_type": "holding",
+      "address": "0x0E",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Modbus Slave Address",
+      "reg_type": "holding",
+      "address": "0x0F",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Max number of fan speeds",
+      "reg_type": "holding",
+      "address": "0x15",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Switch value",
+      "reg_type": "holding",
+      "address": "0x30",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+     },
+     {
+      "name": "Device ID",
+      "reg_type": "holding",
+      "address": "0x31",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+    },
+    {
+      "name": "Software version",
+      "reg_type": "holding",
+      "address": "0x32",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+    },
+    {
+      "name": "Error address",
+      "reg_type": "holding",
+      "address": "0x51",
+      "type": "value",
+      "format": "u16",
+      "scale": 1
+    }
+  ]
+ }
+}
