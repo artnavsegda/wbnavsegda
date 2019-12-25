@@ -208,7 +208,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "Споты 1 (Свет при входе)",
+            "name": "Споты 1 Свет при входе",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -223,7 +223,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "Споты 2 (Коридор)",
+            "name": "Споты 2 Коридор",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -238,7 +238,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "споты 1 (санузел)",
+            "name": "споты 1 санузел",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -253,7 +253,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "споты 2 (Ванная)",
+            "name": "споты 2 Ванная",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -283,7 +283,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "споты(гостинная)",
+            "name": "споты гостинная",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -298,7 +298,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "управляемая розетка(гостинная)",
+            "name": "управляемая розетка гостинная",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -313,7 +313,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "споты(кухня)",
+            "name": "споты кухня",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -328,7 +328,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "трековые светильники(кухня+гостинная)",
+            "name": "трековые светильники кухня гостинная",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -373,7 +373,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "освещение(балкон)",
+            "name": "освещение балкон",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -388,7 +388,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "трековые светильники(кабинет)",
+            "name": "трековые светильники кабинет",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -433,7 +433,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "трековые светильники(спальня)",
+            "name": "трековые светильники спальня",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -478,7 +478,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "управляемая розетка(спальня)",
+            "name": "управляемая розетка спальня",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -508,7 +508,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "блок питания ленты(ванная)",
+            "name": "блок питания ленты ванная",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -523,7 +523,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "блок питания ленты (подсветка пола)",
+            "name": "блок питания ленты подсветка пола",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -553,7 +553,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "теплый пол(балкон)",
+            "name": "теплый пол балкон",
             "mqttPubOptions": {
                 "retain": true
             },
@@ -568,7 +568,7 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
-            "name": "теплый пол(Ванная)",
+            "name": "теплый пол Ванная",
             "mqttPubOptions": {
                 "retain": true
             },
