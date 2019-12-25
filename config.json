@@ -1,9 +1,9 @@
 {
     "bridge": {
         "name": "Homebridge",
-        "username": "CC:22:3D:E3:DE:30",
+        "username": "0E:9B:20:E7:11:C8",
         "port": 51826,
-        "pin": "031-45-155"
+        "pin": "641-03-013"
     },
     "description": "This is an example configuration file with one fake accessory and one fake platform. You can use this as a template for creating your own configuration file containing devices you actually own.",
     "ports": {
@@ -15,14 +15,104 @@
         {
             "accessory": "mqttthing",
             "type": "windowCovering",
-            "name": "My Shade",
+            "name": "Shade Bathroom",
             "logMqtt": true,
             "topics": {
-                "getCurrentPosition": "/devices/shade one/controls/current",
-                "setTargetPosition": "/devices/shade one/controls/target/on",
-                "getTargetPosition": "/devices/shade one/controls/target",
-                "getPositionState": "/devices/shade one/controls/state",
-                "setHoldPosition": "/devices/shade one/controls/hold/on"
+                "getCurrentPosition": "/devices/shade bathroom/controls/current",
+                "setTargetPosition": "/devices/shade bathroom/controls/target/on",
+                "getTargetPosition": "/devices/shade bathroom/controls/target",
+                "getPositionState": "/devices/shade bathroom/controls/state",
+                "setHoldPosition": "/devices/shade bathroom/controls/hold/on"
+            },
+            "positionStateValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Shade Bedroom",
+            "logMqtt": true,
+            "topics": {
+                "getCurrentPosition": "/devices/shade bedroom/controls/current",
+                "setTargetPosition": "/devices/shade bedroom/controls/target/on",
+                "getTargetPosition": "/devices/shade bedroom/controls/target",
+                "getPositionState": "/devices/shade bedroom/controls/state",
+                "setHoldPosition": "/devices/shade bedroom/controls/hold/on"
+            },
+            "positionStateValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Shade Cabinet",
+            "logMqtt": true,
+            "topics": {
+                "getCurrentPosition": "/devices/shade cabinet/controls/current",
+                "setTargetPosition": "/devices/shade cabinet/controls/target/on",
+                "getTargetPosition": "/devices/shade cabinet/controls/target",
+                "getPositionState": "/devices/shade cabinet/controls/state",
+                "setHoldPosition": "/devices/shade cabinet/controls/hold/on"
+            },
+            "positionStateValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Shade Kitchen",
+            "logMqtt": true,
+            "topics": {
+                "getCurrentPosition": "/devices/shade kitchen/controls/current",
+                "setTargetPosition": "/devices/shade kitchen/controls/target/on",
+                "getTargetPosition": "/devices/shade kitchen/controls/target",
+                "getPositionState": "/devices/shade kitchen/controls/state",
+                "setHoldPosition": "/devices/shade kitchen/controls/hold/on"
+            },
+            "positionStateValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Shade Livingroom One",
+            "logMqtt": true,
+            "topics": {
+                "getCurrentPosition": "/devices/shade livingroom one/controls/current",
+                "setTargetPosition": "/devices/shade livingroom one/controls/target/on",
+                "getTargetPosition": "/devices/shade livingroom one/controls/target",
+                "getPositionState": "/devices/shade livingroom one/controls/state",
+                "setHoldPosition": "/devices/shade livingroom one/controls/hold/on"
+            },
+            "positionStateValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "windowCovering",
+            "name": "Shade Livingroom Two",
+            "logMqtt": true,
+            "topics": {
+                "getCurrentPosition": "/devices/shade livingroom two/controls/current",
+                "setTargetPosition": "/devices/shade livingroom two/controls/target/on",
+                "getTargetPosition": "/devices/shade livingroom two/controls/target",
+                "getPositionState": "/devices/shade livingroom two/controls/state",
+                "setHoldPosition": "/devices/shade livingroom two/controls/hold/on"
             },
             "positionStateValues": [
                 0,
