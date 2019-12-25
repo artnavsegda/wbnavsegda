@@ -5,7 +5,7 @@ log("add your rules to /etc/wb-rules/");
 
 function heater_control()
 {
-  if (dev["heater_control"]["28-active"] == 1) {
+  if (dev["heater_control"]["active"] == 1) {
     if ( dev["wb-w1"]["28-000008f2ce1a"] > dev["heater_control"]["target_temperature"]) {
       dev["wb-mio-gpio_209:5"]["K2"] = 0;
     } else {
