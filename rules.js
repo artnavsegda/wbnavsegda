@@ -344,7 +344,33 @@ defineRule("stateless_button_control", {
   then: function (newValue, devName, cellName)  {
     if (!dev["wb-mio-gpio_211:1"]["DR3"])
     {
-      dev["wb-mio-gpio_211:4"]["K1"] = !dev["wb-mio-gpio_211:4"]["K1"]
+        dev["wb-mio-gpio_211:4"]["K1"] = 0;
+        dev["wb-mio-gpio_211:4"]["K2"] = 0;
+        dev["wb-mio-gpio_211:4"]["K3"] = 0;
+        dev["wb-mio-gpio_211:4"]["K4"] = 0;
+        dev["wb-mio-gpio_211:4"]["K5"] = 0;
+        dev["wb-mio-gpio_211:4"]["K6"] = 0;
+        dev["wb-mio-gpio_211:4"]["K7"] = 0;
+        dev["wb-mio-gpio_211:4"]["K8"] = 0;
+      
+        dev["wb-mio-gpio_211:5"]["K1"] = 0;
+        dev["wb-mio-gpio_211:5"]["K2"] = 0;
+        dev["wb-mio-gpio_211:5"]["K3"] = 0;
+        dev["wb-mio-gpio_211:5"]["K4"] = 0;
+        dev["wb-mio-gpio_211:5"]["K5"] = 0;
+        dev["wb-mio-gpio_211:5"]["K6"] = 0;
+        dev["wb-mio-gpio_211:5"]["K7"] = 0;
+        dev["wb-mio-gpio_211:5"]["K8"] = 0;
+      
+        dev["wb-mio-gpio_211:6"]["K1"] = 0;
+        dev["wb-mio-gpio_211:6"]["K2"] = 0;
+        dev["wb-mio-gpio_211:6"]["K3"] = 0;
+        dev["wb-mio-gpio_211:6"]["K4"] = 0;
+        dev["wb-mio-gpio_211:6"]["K5"] = 0;
+        dev["wb-mio-gpio_211:6"]["K6"] = 0;
+        dev["wb-mio-gpio_211:6"]["K7"] = 0;
+        dev["wb-mio-gpio_211:6"]["K8"] = 0;
+      
     	dev["stateless_button"]["press"] = 1;
     }
   }
