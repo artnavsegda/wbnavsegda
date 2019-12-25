@@ -3,25 +3,26 @@ log("add your rules to /etc/wb-rules/");
 
 //balcony
 
+function heater_control()
+{
+  if ( dev["wb-w1"]["28-000008f2ce1a"] > dev["heater_control"]["target_temperature"]) {
+    dev["wb-mio-gpio_209:5"]["K2"] = 0;
+  } else {
+    dev["wb-mio-gpio_209:5"]["K2"] = 1;
+  }
+}
+
 defineRule("heater_control_rule", { //название правила - "контроль обогревателя", может быть произвольным
   whenChanged: "wb-w1/28-000008f2ce1a", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
   then: function (newValue, devName, cellName) { //выполняй следующие действия
-    if ( newValue > dev["heater_control"]["target_temperature"]) { //если температура датчика больше 30 градусов
-      dev["wb-mio-gpio_209:5"]["K2"] = 0; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "выключено"
-    } else {
-      dev["wb-mio-gpio_209:5"]["K2"] = 1; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "включено"
-    }
+    heater_control();
   }
 });
 
 defineRule("heater_control_rule_back", { //название правила - "контроль обогревателя", может быть произвольным
   whenChanged: "heater_control/target_temperature", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
   then: function (newValue, devName, cellName) { //выполняй следующие действия
-    if ( newValue < dev["wb-w1"]["28-000008f2ce1a"]) { //если температура датчика больше 30 градусов
-      dev["wb-mio-gpio_209:5"]["K2"] = 0; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "выключено"
-    } else {
-      dev["wb-mio-gpio_209:5"]["K2"] = 1; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "включено"
-    }
+    heater_control();
   }
 });
 
@@ -38,25 +39,26 @@ defineVirtualDevice("heater_control", {
 
 //00000a42fdb0
 
+function heater_control_bath()
+{
+  if ( dev["wb-w1"]["28-00000a42fdb0"] > dev["heater_control_bath"]["target_temperature"]) {
+    dev["wb-mio-gpio_209:5"]["K1"] = 0;
+  } else {
+    dev["wb-mio-gpio_209:5"]["K1"] = 1;
+  }
+}
+
 defineRule("heater_control_bath_rule", { //название правила - "контроль обогревателя", может быть произвольным
   whenChanged: "wb-w1/28-00000a42fdb0", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
   then: function (newValue, devName, cellName) { //выполняй следующие действия
-    if ( newValue > dev["heater_control"]["target_temperature"]) { //если температура датчика больше 30 градусов
-      dev["wb-mio-gpio_209:5"]["K1"] = 0; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "выключено"
-    } else {
-      dev["wb-mio-gpio_209:5"]["K1"] = 1; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "включено"
-    }
+    heater_control_bath();
   }
 });
 
 defineRule("heater_control_bath_rule_back", { //название правила - "контроль обогревателя", может быть произвольным
   whenChanged: "heater_control_bath/target_temperature", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
   then: function (newValue, devName, cellName) { //выполняй следующие действия
-    if ( newValue < dev["wb-w1"]["28-00000a42fdb0"]) { //если температура датчика больше 30 градусов
-      dev["wb-mio-gpio_209:5"]["K1"] = 0; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "выключено"
-    } else {
-      dev["wb-mio-gpio_209:5"]["K1"] = 1; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "включено"
-    }
+    heater_control_bath();
   }
 });
 
