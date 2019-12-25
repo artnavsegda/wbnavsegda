@@ -50,7 +50,7 @@ defineRule("heater_control_bath_rule", { //название правила - "к
 });
 
 defineRule("heater_control_bath_rule_back", { //название правила - "контроль обогревателя", может быть произвольным
-  whenChanged: "heater_control/target_temperature", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
+  whenChanged: "heater_control_bath/target_temperature", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
   then: function (newValue, devName, cellName) { //выполняй следующие действия
     if ( newValue < dev["wb-w1"]["28-00000a42fdb0"]) { //если температура датчика больше 30 градусов
       dev["wb-mio-gpio_209:5"]["K1"] = 0; //установи Реле 1 модуля WB-MRM2 с адресом 130 в состояние "выключено"
