@@ -165,8 +165,8 @@
                 "setTargetHeaterCoolerState": "/devices/heater_control/controls/target/on",
                 "getTargetHeaterCoolerState": "/devices/heater_control/controls/target",
                 "getCurrentTemperature": "/devices/wb-w1/controls/28-000008f2ce1a",
-                "setHeatingThresholdTemperature": "/devices/heatercooler/controls/target_temperature/on",
-                "getHeatingThresholdTemperature": "/devices/heatercooler/controls/target_temperature"
+                "setHeatingThresholdTemperature": "/devices/heater_control/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/heater_control/controls/target_temperature"
             },
             "integerValue": true,
             "currentHeaterCoolerValues": [
