@@ -5,10 +5,15 @@ log("add your rules to /etc/wb-rules/");
 
 function heater_control()
 {
-  if ( dev["wb-w1"]["28-000008f2ce1a"] > dev["heater_control"]["target_temperature"]) {
+  if (dev["heater_control"]["28-active"] == 1) {
+    if ( dev["wb-w1"]["28-000008f2ce1a"] > dev["heater_control"]["target_temperature"]) {
+      dev["wb-mio-gpio_209:5"]["K2"] = 0;
+    } else {
+      dev["wb-mio-gpio_209:5"]["K2"] = 1;
+    }
+  }
+  else {
     dev["wb-mio-gpio_209:5"]["K2"] = 0;
-  } else {
-    dev["wb-mio-gpio_209:5"]["K2"] = 1;
   }
 }
 
@@ -34,7 +39,41 @@ defineVirtualDevice("heater_control", {
 	    value : 22,
       	max : 100
 	},
+  active: {
+	    type: "range",
+	    value : 1,
+      	max : 1
+	},
+  current: {
+      type: "range",
+      value: 1,
+      max: 3,
+      readonly: true
+  },
+  target: {
+      type: "range",
+      value: 0,
+      max: 2
+  },
     }
+});
+
+defineRule("heater_control_target", {
+  whenChanged: "heater/target",
+  then: function (newValue, devName, cellName)  {
+    switch(newValue)
+    {
+      case 0:
+        dev["heater_control"]["current"] = 1;
+       break;
+      case 1:
+        dev["heater_control"]["current"] = 2;
+       break;
+      case 2:
+        dev["heater_control"]["current"] = 3;
+      break;
+    }
+  }
 });
 
 //00000a42fdb0
