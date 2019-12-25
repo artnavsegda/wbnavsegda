@@ -49,6 +49,7 @@ shades.forEach(function (v) {
             clearTimeout(timerID);
             timerID = 0;
             dev[devname]["state"] = 2;
+//            dev["wb-mio-gpio_209:"+dev]["ON"+out] = 0;
           }
           else if (dev[devname]["current"] > dev[devname]["target"])
           {
@@ -57,6 +58,8 @@ shades.forEach(function (v) {
             {
             	dev[devname]["state"] = 0;
             }
+//            dev["wb-mio-gpio_209:"+dev]["ON"+out] = 1;
+//            dev["wb-mio-gpio_209:"+dev]["DIR"+out] = 1;
           }
           else if (dev[devname]["current"] < dev[devname]["target"])
           {
@@ -65,6 +68,8 @@ shades.forEach(function (v) {
             {
             	dev[devname]["state"] = 1;
             }
+//            dev["wb-mio-gpio_209:"+dev]["ON"+out] = 1;
+//            dev["wb-mio-gpio_209:"+dev]["DIR"+out] = 0;
           }
         },1000);
       }
