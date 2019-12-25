@@ -1,10 +1,10 @@
 var shades = [
-  {name: "bathroom", dev:2, out:2, in: {addr:209, dev:1, up:1, down:2}},
-  {name: "livingroom one", dev:2, out:2, in: {addr:211, dev:1, up:10, down:11}},
-  {name: "livingroom two", dev:2, out:3, in: {addr:209, dev:1, up:3, down:4}},
-  {name: "kitchen", dev:2, out:4, in: {addr:209, dev:1, up:5, down:6}},
-  {name: "cabinet", dev:3, out:1, in: {addr:209, dev:1, up:9, down:10}},
-  {name: "bedroom", dev:3, out:2, in: {addr:209, dev:1, up:11, down:12}}
+  {name: "bathroom", dev:2, out:2, in: {addr:209, dev:1, up:1, down:2}, speed: 1000},
+  {name: "livingroom one", dev:2, out:2, in: {addr:211, dev:1, up:10, down:11}, speed: 1000},
+  {name: "livingroom two", dev:2, out:3, in: {addr:209, dev:1, up:3, down:4}, speed: 1000},
+  {name: "kitchen", dev:2, out:4, in: {addr:209, dev:1, up:5, down:6}, speed: 1000},
+  {name: "cabinet", dev:3, out:1, in: {addr:209, dev:1, up:9, down:10}, speed: 1000},
+  {name: "bedroom", dev:3, out:2, in: {addr:209, dev:1, up:11, down:12}, speed: 150}
 ];
 
 shades.forEach(function (v) {
@@ -49,7 +49,7 @@ shades.forEach(function (v) {
             clearTimeout(timerID);
             timerID = 0;
             dev[devname]["state"] = 2;
-//            dev["wb-mio-gpio_209:"+dev]["ON"+out] = 0;
+            dev["wb-mio-gpio_209:"+v.dev]["ON"+v.out] = 0;
           }
           else if (dev[devname]["current"] > dev[devname]["target"])
           {
@@ -58,8 +58,8 @@ shades.forEach(function (v) {
             {
             	dev[devname]["state"] = 0;
             }
-//            dev["wb-mio-gpio_209:"+dev]["ON"+out] = 1;
-//            dev["wb-mio-gpio_209:"+dev]["DIR"+out] = 1;
+            dev["wb-mio-gpio_209:"+v.dev]["ON"+v.out] = 1;
+            dev["wb-mio-gpio_209:"+v.dev]["DIR"+v.out] = 1;
           }
           else if (dev[devname]["current"] < dev[devname]["target"])
           {
@@ -68,10 +68,10 @@ shades.forEach(function (v) {
             {
             	dev[devname]["state"] = 1;
             }
-//            dev["wb-mio-gpio_209:"+dev]["ON"+out] = 1;
-//            dev["wb-mio-gpio_209:"+dev]["DIR"+out] = 0;
+            dev["wb-mio-gpio_209:"+v.dev]["ON"+v.out] = 1;
+            dev["wb-mio-gpio_209:"+v.dev]["DIR"+v.out] = 0;
           }
-        },1000);
+        },v.speed);
       }
     }
   });
