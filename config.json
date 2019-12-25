@@ -186,6 +186,37 @@
         },
         {
             "accessory": "mqttthing",
+            "type": "heaterCooler",
+            "name": "Bath heated floor",
+            "logMqtt": true,
+            "topics": {
+                "setActive": "/devices/heater_control_bath/controls/active/on",
+                "getActive": "/devices/heater_control_bath/controls/active",
+                "getCurrentHeaterCoolerState": "/devices/heater_control_bath/controls/current",
+                "setTargetHeaterCoolerState": "/devices/heater_control_bath/controls/target/on",
+                "getTargetHeaterCoolerState": "/devices/heater_control_bath/controls/target",
+                "getCurrentTemperature": "/devices/wb-w1/controls/28-00000a42fdb0",
+                "setHeatingThresholdTemperature": "/devices/heater_control_bath/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/heater_control_bath/controls/target_temperature"
+            },
+            "integerValue": true,
+            "currentHeaterCoolerValues": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "targetHeaterCoolerValues": [
+                0,
+                1,
+                2
+            ],
+            "restrictHeaterCoolerState": [
+                1
+            ]
+        },
+        {
+            "accessory": "mqttthing",
             "type": "thermostat",
             "name": "My Thermostat",
             "logMqtt": true,

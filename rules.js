@@ -31,7 +31,7 @@ defineRule("heater_control_rule_back", {
   }
 });
 
-defineRule("heater_control_rule_back", {
+defineRule("heater_control_rule_active", {
   whenChanged: "heater_control/active",
   then: function (newValue, devName, cellName) {
     heater_control();
@@ -87,23 +87,35 @@ defineRule("heater_control_target", {
 
 function heater_control_bath()
 {
-  if ( dev["wb-w1"]["28-00000a42fdb0"] > dev["heater_control_bath"]["target_temperature"]) {
+  if (dev["heater_control_bath"]["active"] == 1) {
+    if ( dev["wb-w1"]["28-00000a42fdb0"] > dev["heater_control_bath"]["target_temperature"]) {
+      dev["wb-mio-gpio_209:5"]["K1"] = 0;
+    } else {
+      dev["wb-mio-gpio_209:5"]["K1"] = 1;
+    }
+  }
+  else {
     dev["wb-mio-gpio_209:5"]["K1"] = 0;
-  } else {
-    dev["wb-mio-gpio_209:5"]["K1"] = 1;
   }
 }
 
-defineRule("heater_control_bath_rule", { //название правила - "контроль обогревателя", может быть произвольным
-  whenChanged: "wb-w1/28-00000a42fdb0", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
-  then: function (newValue, devName, cellName) { //выполняй следующие действия
+defineRule("heater_control_bath_rule", {
+  whenChanged: "wb-w1/28-00000a42fdb0",
+  then: function (newValue, devName, cellName) {
     heater_control_bath();
   }
 });
 
-defineRule("heater_control_bath_rule_back", { //название правила - "контроль обогревателя", может быть произвольным
-  whenChanged: "heater_control_bath/target_temperature", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
-  then: function (newValue, devName, cellName) { //выполняй следующие действия
+defineRule("heater_control_bath_rule_back", {
+  whenChanged: "heater_control_bath/target_temperature",
+  then: function (newValue, devName, cellName) {
+    heater_control_bath();
+  }
+});
+
+defineRule("heater_control_bath_rule_active", {
+  whenChanged: "heater_control_bath/active",
+  then: function (newValue, devName, cellName) {
     heater_control_bath();
   }
 });
@@ -111,12 +123,46 @@ defineRule("heater_control_bath_rule_back", { //название правила 
 defineVirtualDevice("heater_control_bath", {
     title: "Heater control bathroom",
     cells: {
-	target_temperature: {
-	    type: "range",
-	    value : 22,
-      	max : 100
-	},
+      target_temperature: {
+          type: "range",
+          value : 22,
+          max : 100
+      },
+      active: {
+            type: "range",
+            value : 1,
+            max : 1
+        },
+      current: {
+          type: "range",
+          value: 1,
+          max: 3,
+          readonly: true
+      },
+      target: {
+          type: "range",
+          value: 0,
+          max: 2
+      }
     }
+});
+
+defineRule("heater_control_bath_target", {
+  whenChanged: "heater_control_bath/target",
+  then: function (newValue, devName, cellName)  {
+    switch(newValue)
+    {
+      case 0:
+        dev["heater_control_bath"]["current"] = 1;
+       break;
+      case 1:
+        dev["heater_control_bath"]["current"] = 2;
+       break;
+      case 2:
+        dev["heater_control_bath"]["current"] = 3;
+      break;
+    }
+  }
 });
 
 defineVirtualDevice("co2_alarm", {
