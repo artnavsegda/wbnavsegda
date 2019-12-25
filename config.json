@@ -148,6 +148,9 @@
                 0,
                 1,
                 2
+            ],
+            "restrictHeaterCoolerState": [
+                1
             ]
         },
         {
