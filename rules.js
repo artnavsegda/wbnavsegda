@@ -1,5 +1,5 @@
 // place your rules here or add more .js files in this directory
-log("add your rules to /etc/wb-rules/");
+log("reload");
 
 //balcony
 
@@ -17,16 +17,23 @@ function heater_control()
   }
 }
 
-defineRule("heater_control_rule", { //название правила - "контроль обогревателя", может быть произвольным
-  whenChanged: "wb-w1/28-000008f2ce1a", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
-  then: function (newValue, devName, cellName) { //выполняй следующие действия
+defineRule("heater_control_rule", {
+  whenChanged: "wb-w1/28-000008f2ce1a",
+  then: function (newValue, devName, cellName) {
     heater_control();
   }
 });
 
-defineRule("heater_control_rule_back", { //название правила - "контроль обогревателя", может быть произвольным
-  whenChanged: "heater_control/target_temperature", //при изменении состояния датчика 1-Wire с идентификатором 28-000008f2ce1a
-  then: function (newValue, devName, cellName) { //выполняй следующие действия
+defineRule("heater_control_rule_back", {
+  whenChanged: "heater_control/target_temperature",
+  then: function (newValue, devName, cellName) {
+    heater_control();
+  }
+});
+
+defineRule("heater_control_rule_back", {
+  whenChanged: "heater_control/active",
+  then: function (newValue, devName, cellName) {
     heater_control();
   }
 });
@@ -34,32 +41,32 @@ defineRule("heater_control_rule_back", { //название правила - "к
 defineVirtualDevice("heater_control", {
     title: "Heater control",
     cells: {
-	target_temperature: {
-	    type: "range",
-	    value : 22,
-      	max : 100
-	},
-  active: {
-	    type: "range",
-	    value : 1,
-      	max : 1
-	},
-  current: {
-      type: "range",
-      value: 1,
-      max: 3,
-      readonly: true
-  },
-  target: {
-      type: "range",
-      value: 0,
-      max: 2
-  },
+      target_temperature: {
+          type: "range",
+          value : 22,
+          max : 100
+      },
+      active: {
+            type: "range",
+            value : 1,
+            max : 1
+        },
+      current: {
+          type: "range",
+          value: 1,
+          max: 3,
+          readonly: true
+      },
+      target: {
+          type: "range",
+          value: 0,
+          max: 2
+      }
     }
 });
 
 defineRule("heater_control_target", {
-  whenChanged: "heater/target",
+  whenChanged: "heater_control/target",
   then: function (newValue, devName, cellName)  {
     switch(newValue)
     {
@@ -76,7 +83,7 @@ defineRule("heater_control_target", {
   }
 });
 
-//00000a42fdb0
+//bath
 
 function heater_control_bath()
 {
