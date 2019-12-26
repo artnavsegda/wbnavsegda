@@ -37,6 +37,28 @@ shades.forEach(function (v) {
     }
   });
 
+  defineRule(devname + " shade up", {
+      whenChanged: "wb-mio-gpio_" + v.in.addr ":"+v.in.dev+"/Counter "+v.in.up,
+      then: function(newValue, devName, cellName) {
+        if (!dev["wb-mio-gpio_" + v.in.addr + ":"+v.in.dev]["DR"+v.in.up)
+        {
+          dev[devname]["target"] = 0;
+        }
+      }
+    }
+  )
+
+  defineRule(devname + " shade down", {
+      whenChanged: "wb-mio-gpio_" + v.in.addr ":"+v.in.dev+"/Counter "+v.in.down,
+      then: function(newValue, devName, cellName) {
+        if (!dev["wb-mio-gpio_" + v.in.addr + ":"+v.in.dev]["DR"+v.in.down)
+        {
+          dev[devname]["target"] = 100;
+        }
+      }
+    }
+  )
+
   var timerID = 0;
   defineRule(devname + " control", {
     whenChanged: devname + "/target",
