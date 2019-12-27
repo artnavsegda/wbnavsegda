@@ -167,39 +167,6 @@
         {
             "accessory": "mqttthing",
             "type": "heaterCooler",
-            "name": "My Heater Cooler",
-            "logMqtt": false,
-            "topics": {
-                "setActive": "/devices/heatercooler/controls/active/on",
-                "getActive": "/devices/heatercooler/controls/active",
-                "getCurrentHeaterCoolerState": "/devices/heatercooler/controls/current",
-                "setTargetHeaterCoolerState": "/devices/heatercooler/controls/target/on",
-                "getTargetHeaterCoolerState": "/devices/heatercooler/controls/target",
-                "getCurrentTemperature": "/devices/heatercooler/controls/temperature",
-                "setCoolingThresholdTemperature": "/devices/heatercooler/controls/coolingThreshold/on",
-                "getCoolingThresholdTemperature": "/devices/heatercooler/controls/coolingThreshold",
-                "setHeatingThresholdTemperature": "/devices/heatercooler/controls/heatingThreshold/on",
-                "getHeatingThresholdTemperature": "/devices/heatercooler/controls/heatingThreshold"
-            },
-            "integerValue": true,
-            "currentHeaterCoolerValues": [
-                0,
-                1,
-                2,
-                3
-            ],
-            "targetHeaterCoolerValues": [
-                0,
-                1,
-                2
-            ],
-            "restrictHeaterCoolerState": [
-                1
-            ]
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "heaterCooler",
             "name": "Balcony heated floor",
             "logMqtt": true,
             "topics": {
@@ -226,7 +193,8 @@
             ],
             "restrictHeaterCoolerState": [
                 1
-            ]
+            ],
+            "maxTemperature": 30
         },
         {
             "accessory": "mqttthing",
@@ -257,37 +225,8 @@
             ],
             "restrictHeaterCoolerState": [
                 1
-            ]
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "thermostat",
-            "name": "My Thermostat",
-            "logMqtt": false,
-            "topics": {
-                "getCurrentHeatingCoolingState": "/devices/thermostat/controls/current",
-                "setTargetHeatingCoolingState": "/devices/thermostat/controls/target/on",
-                "getTargetHeatingCoolingState": "/devices/thermostat/controls/target",
-                "getCurrentTemperature": "/devices/thermostat/controls/current_temperature",
-                "setTargetTemperature": "/devices/thermostat/controls/target_temperature/on",
-                "getTargetTemperature": "/devices/thermostat/controls/target_temperature",
-                "setTemperatureDisplayUnits": "/devices/thermostat/controls/temperatureDisplayUnits/on",
-                "getTemperatureDisplayUnits": "/devices/thermostat/controls/temperatureDisplayUnits",
-                "setCoolingThresholdTemperature": "/devices/thermostat/controls/coolingThreshold/on",
-                "getCoolingThresholdTemperature": "/devices/thermostat/controls/coolingThreshold",
-                "setHeatingThresholdTemperature": "/devices/thermostat/controls/heatingThreshold/on",
-                "getHeatingThresholdTemperature": "/devices/thermostat/controls/heatingThreshold"
-            },
-            "heatingCoolingStateValues": [
-                0,
-                1,
-                2,
-                3
             ],
-            "temperatureDisplayUnitsValues": [
-                0,
-                1
-            ]
+            "maxTemperature": 30
         },
         {
             "accessory": "mqttthing",
