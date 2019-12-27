@@ -14,6 +14,17 @@
     "accessories": [
         {
             "accessory": "mqttthing",
+            "type": "leakSensor",
+            "logMqtt": true,
+            "name": "Датчик протечек",
+            "topics":
+            {
+                "getLeakDetected":              "/devices/wb-mio-gpio_211:3/controls/DR14",
+            },
+            "integerValue": true
+        }
+        {
+            "accessory": "mqttthing",
             "type": "heaterCooler",
             "name": "My Air Conditioner",
             "logMqtt": true,
@@ -277,31 +288,6 @@
             "temperatureDisplayUnitsValues": [
                 0,
                 1
-            ]
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "switch",
-            "name": "My Switch",
-            "logMqtt": false,
-            "topics": {
-                "getOn": "/devices/wb-mio-gpio_211:1/controls/DR1",
-                "setOn": "/devices/wb-mio-gpio_211:1/controls/DR1/on"
-            },
-            "integerValue": true
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "statelessProgrammableSwitch",
-            "name": "My Stateless Switch",
-            "logMqtt": false,
-            "topics": {
-                "getSwitch": "/devices/wb-mio-gpio_211:1/controls/DR2"
-            },
-            "switchValues": [
-                1,
-                2,
-                3
             ]
         },
         {
@@ -645,36 +631,6 @@
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K8",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K8/on"
-            },
-            "integerValue": true,
-            "onlineValue": "Online"
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "lightbulb",
-            "name": "теплый пол балкон",
-            "mqttPubOptions": {
-                "retain": true
-            },
-            "logMqtt": false,
-            "topics": {
-                "getOn": "/devices/wb-mio-gpio_209:5/controls/K1",
-                "setOn": "/devices/wb-mio-gpio_209:5/controls/K1/on"
-            },
-            "integerValue": true,
-            "onlineValue": "Online"
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "lightbulb",
-            "name": "теплый пол Ванная",
-            "mqttPubOptions": {
-                "retain": true
-            },
-            "logMqtt": false,
-            "topics": {
-                "getOn": "/devices/wb-mio-gpio_209:5/controls/K2",
-                "setOn": "/devices/wb-mio-gpio_209:5/controls/K2/on"
             },
             "integerValue": true,
             "onlineValue": "Online"
