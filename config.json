@@ -12,6 +12,20 @@
         "comment": "This section is used to control the range of ports that separate accessory (like camera or television) should be bind to."
     },
     "accessories": [
+      {
+            "accessory": "mqttthing",
+            "type": "carbonDioxideSensor",
+            "name": "Датчик CO2",
+            "logMqtt": false,
+            "topics": {
+                "getCarbonDioxideDetected": "/devices/co2_alarm/controls/enabled",
+                "getCarbonDioxideLevel": "/devices/wb-msw-v3_135/controls/CO2"
+            },
+            "carbonDioxideDetectedValues": [
+                "0",
+                "1"
+            ]
+        },
         {
             "accessory": "mqttthing",
             "type": "leakSensor",
