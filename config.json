@@ -14,6 +14,36 @@
     "accessories": [
         {
             "accessory": "mqttthing",
+            "type": "heaterCooler",
+            "name": "My Air Conditioner",
+            "logMqtt": true,
+            "topics": {
+                "setActive": "/devices/mh-rc-mbs-1_1/controls/AC unit on off/on",
+                "getActive": "/devices/mh-rc-mbs-1_1/controls/AC unit on off",
+                "getCurrentHeaterCoolerState": "/devices/mh-rc-mbs-1_1/controls/AC unit mode",
+                "setTargetHeaterCoolerState": "/devices/mh-rc-mbs-1_1/controls/AC unit mode/on",
+                "getTargetHeaterCoolerState": "/devices/mh-rc-mbs-1_1/controls/AC unit mode",
+                "getCurrentTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint",
+                "setCoolingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint/on",
+                "getCoolingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint",
+                "setHeatingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint/on",
+                "getHeatingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint"
+            },
+            "integerValue": true,
+            "currentHeaterCoolerValues": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "targetHeaterCoolerValues": [
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "accessory": "mqttthing",
             "type": "windowCovering",
             "name": "Shade Bathroom",
             "logMqtt": true,
