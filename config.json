@@ -18,26 +18,30 @@
             "name": "My Air Conditioner",
             "logMqtt": true,
             "topics": {
-                "setActive": "/devices/mh-rc-mbs-1_1/controls/AC unit on off/on",
-                "getActive": "/devices/mh-rc-mbs-1_1/controls/AC unit on off",
-                "getCurrentHeaterCoolerState": "/devices/mh-rc-mbs-1_1/controls/AC unit mode",
-                "setTargetHeaterCoolerState": "/devices/mh-rc-mbs-1_1/controls/AC unit mode/on",
-                "getTargetHeaterCoolerState": "/devices/mh-rc-mbs-1_1/controls/AC unit mode",
-                "getCurrentTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint",
-                "setCoolingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint/on",
-                "getCoolingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint",
-                "setHeatingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint/on",
-                "getHeatingThresholdTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Setpoint"
+                "setActive": "/devices/ac_control/controls/enabled/on",
+                "getActive": "/devices/ac_control/controls/enabled",
+                "getCurrentHeaterCoolerState": "/devices/ac_control/controls/mode",
+                "setTargetHeaterCoolerState": "/devices/ac_control/controls/mode/on",
+                "getTargetHeaterCoolerState": "/devices/ac_control/controls/mode",
+                "getCurrentTemperature": "/devices/ac_control/controls/temperature",
+                "setCoolingThresholdTemperature": "/devices/ac_control/controls/temperature/on",
+                "getCoolingThresholdTemperature": "/devices/ac_control/controls/temperature",
+                "setHeatingThresholdTemperature": "/devices/ac_control/controls/temperature/on",
+                "getHeatingThresholdTemperature": "/devices/ac_control/controls/temperature"
             },
             "integerValue": true,
             "currentHeaterCoolerValues": [
-                0,
-                1,
                 2,
-                3
+                3,
+                1,
+                4
             ],
             "targetHeaterCoolerValues": [
                 0,
+                1,
+                4
+            ],
+            "restrictHeaterCoolerState": [
                 1,
                 2
             ]
@@ -154,7 +158,7 @@
             "accessory": "mqttthing",
             "type": "heaterCooler",
             "name": "My Heater Cooler",
-            "logMqtt": true,
+            "logMqtt": false,
             "topics": {
                 "setActive": "/devices/heatercooler/controls/active/on",
                 "getActive": "/devices/heatercooler/controls/active",
@@ -249,7 +253,7 @@
             "accessory": "mqttthing",
             "type": "thermostat",
             "name": "My Thermostat",
-            "logMqtt": true,
+            "logMqtt": false,
             "topics": {
                 "getCurrentHeatingCoolingState": "/devices/thermostat/controls/current",
                 "setTargetHeatingCoolingState": "/devices/thermostat/controls/target/on",
@@ -279,7 +283,7 @@
             "accessory": "mqttthing",
             "type": "switch",
             "name": "My Switch",
-            "logMqtt": true,
+            "logMqtt": false,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:1/controls/DR1",
                 "setOn": "/devices/wb-mio-gpio_211:1/controls/DR1/on"
@@ -290,7 +294,7 @@
             "accessory": "mqttthing",
             "type": "statelessProgrammableSwitch",
             "name": "My Stateless Switch",
-            "logMqtt": true,
+            "logMqtt": false,
             "topics": {
                 "getSwitch": "/devices/wb-mio-gpio_211:1/controls/DR2"
             },
@@ -307,7 +311,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K1",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K1/on"
@@ -322,7 +326,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K2",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K2/on"
@@ -337,7 +341,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K3",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K3/on"
@@ -352,7 +356,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K4",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K4/on"
@@ -367,7 +371,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K5",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K5/on"
@@ -382,7 +386,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K6",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K6/on"
@@ -397,7 +401,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K7",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K7/on"
@@ -412,7 +416,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:4/controls/K8",
                 "setOn": "/devices/wb-mio-gpio_211:4/controls/K8/on"
@@ -427,7 +431,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K1",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K1/on"
@@ -442,7 +446,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K2",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K2/on"
@@ -457,7 +461,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K3",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K3/on"
@@ -472,7 +476,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K4",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K4/on"
@@ -487,7 +491,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K5",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K5/on"
@@ -502,7 +506,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K6",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K6/on"
@@ -517,7 +521,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K7",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K7/on"
@@ -532,7 +536,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K1",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K1/on"
@@ -547,7 +551,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K2",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K2/on"
@@ -562,7 +566,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K3",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K3/on"
@@ -577,7 +581,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K4",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K4/on"
@@ -592,7 +596,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K5",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K5/on"
@@ -607,7 +611,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K6",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K6/on"
@@ -622,7 +626,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K7",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K7/on"
@@ -637,7 +641,7 @@
             "mqttPubOptions": {
                 "retain": true
             },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:6/controls/K8",
                 "setOn": "/devices/wb-mio-gpio_211:6/controls/K8/on"

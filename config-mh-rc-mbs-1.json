@@ -10,6 +10,7 @@
       "reg_type": "holding",
       "address": "0x0",
       "type": "switch",
+      "max": "0x1",
       "format": "u16",
       "scale": 1
      },
@@ -35,7 +36,7 @@
       "name": "AC unit Vane Position",
       "reg_type": "holding",
       "address": "0x3",
-      "type": "value",
+      "type": "range",
       "max": "0xa",
       "format": "u16",
       "scale": 1
@@ -248,6 +249,14 @@
       "scale": 1
      },
      {
+      "name": "Error reset",
+      "reg_type": "holding",
+      "address": "0x2D",
+      "type": "pushbutton",
+      "format": "u16",
+      "scale": 1
+     },
+     {
       "name": "Switch value",
       "reg_type": "holding",
       "address": "0x30",
@@ -280,6 +289,14 @@
       "address": "0x51",
       "type": "value",
       "readonly": true, 
+      "format": "u16",
+      "scale": 1
+    },
+    {
+      "name": "Reset",
+      "reg_type": "holding",
+      "address": "0x63",
+      "type": "pushbutton",
       "format": "u16",
       "scale": 1
     }
