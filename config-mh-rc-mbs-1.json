@@ -9,7 +9,7 @@
       "name": "AC unit on off",
       "reg_type": "holding",
       "address": "0x0",
-      "type": "range",
+      "type": "switch",
       "format": "u16",
       "scale": 1
      },
@@ -18,6 +18,7 @@
       "reg_type": "holding",
       "address": "0x1",
       "type": "range",
+      "max": "0x4",
       "format": "u16",
       "scale": 1
      },
@@ -26,6 +27,7 @@
       "reg_type": "holding",
       "address": "0x2",
       "type": "range",
+      "max": "0x4",
       "format": "u16",
       "scale": 1
      },
@@ -34,6 +36,7 @@
       "reg_type": "holding",
       "address": "0x3",
       "type": "value",
+      "max": "0xa",
       "format": "u16",
       "scale": 1
      },
@@ -50,6 +53,7 @@
       "reg_type": "holding",
       "address": "0x5",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -57,7 +61,7 @@
       "name": "Window Contact",
       "reg_type": "holding",
       "address": "0x6",
-      "type": "range",
+      "type": "switch",
       "format": "u16",
       "scale": 1
      },
@@ -65,7 +69,7 @@
       "name": "MH-RC-MBS-1 Disablement",
       "reg_type": "holding",
       "address": "0x7",
-      "type": "range",
+      "type": "switch",
       "format": "u16",
       "scale": 1
      },
@@ -73,7 +77,7 @@
       "name": "AC Remote Control Disablement",
       "reg_type": "holding",
       "address": "0x8",
-      "type": "range",
+      "type": "switch",
       "format": "u16",
       "scale": 1
      },
@@ -89,7 +93,8 @@
       "name": "AC unit Alarm Status",
       "reg_type": "holding",
       "address": "0xa",
-      "type": "value",
+      "type": "switch",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -98,6 +103,7 @@
       "reg_type": "holding",
       "address": "0xb",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -114,6 +120,7 @@
       "reg_type": "holding",
       "address": "0x17",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -122,6 +129,7 @@
       "reg_type": "holding",
       "address": "0x18",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -130,6 +138,7 @@
       "reg_type": "holding",
       "address": "0x19",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -137,7 +146,8 @@
       "name": "Status (feedback)",
       "reg_type": "holding",
       "address": "0x1f",
-      "type": "value",
+      "type": "switch",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -146,6 +156,8 @@
       "reg_type": "holding",
       "address": "0x2e",
       "type": "value",
+      "max": "0x3",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -162,6 +174,7 @@
       "reg_type": "holding",
       "address": "0x3c",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -170,6 +183,7 @@
       "reg_type": "holding",
       "address": "0x41",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -178,14 +192,7 @@
       "reg_type": "holding",
       "address": "0x42",
       "type": "value",
-      "format": "u16",
-      "scale": 1
-     },
-     {
-      "name": "Return Path temperature",
-      "reg_type": "holding",
-      "address": "0x42",
-      "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -193,7 +200,7 @@
       "name": "Block Periodic Sendings",
       "reg_type": "holding",
       "address": "0x61",
-      "type": "range",
+      "type": "switch",
       "format": "u16",
       "scale": 1
      },
@@ -201,7 +208,7 @@
       "name": "Master/Slave (gateway)",
       "reg_type": "holding",
       "address": "0x62",
-      "type": "range",
+      "type": "switch",
       "format": "u16",
       "scale": 1
      },
@@ -218,6 +225,7 @@
       "reg_type": "holding",
       "address": "0x0E",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -226,6 +234,7 @@
       "reg_type": "holding",
       "address": "0x0F",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -234,6 +243,7 @@
       "reg_type": "holding",
       "address": "0x15",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -242,6 +252,7 @@
       "reg_type": "holding",
       "address": "0x30",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
      },
@@ -250,6 +261,7 @@
       "reg_type": "holding",
       "address": "0x31",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
     },
@@ -258,6 +270,7 @@
       "reg_type": "holding",
       "address": "0x32",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
     },
@@ -266,6 +279,7 @@
       "reg_type": "holding",
       "address": "0x51",
       "type": "value",
+      "readonly": true, 
       "format": "u16",
       "scale": 1
     }
