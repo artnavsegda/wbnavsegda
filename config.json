@@ -464,8 +464,8 @@
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K7",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K7/on"
             },
-            "onValue:": 0,
-            "offValue": 1,
+            "onValue:": "0",
+            "offValue": "1",
             "onlineValue": "Online"
         },
         {
