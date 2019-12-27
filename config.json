@@ -17,12 +17,11 @@
             "type": "leakSensor",
             "logMqtt": true,
             "name": "Датчик протечек",
-            "topics":
-            {
-                "getLeakDetected":              "/devices/wb-mio-gpio_211:3/controls/DR14",
+            "topics": {
+                "getLeakDetected": "/devices/wb-mio-gpio_211:3/controls/DR14"
             },
             "integerValue": true
-        }
+        },
         {
             "accessory": "mqttthing",
             "type": "heaterCooler",
