@@ -693,6 +693,21 @@
             },
             "integerValue": true,
             "onlineValue": "Online"
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "lightbulb",
+            "name": "Камин",
+            "mqttPubOptions": {
+                "retain": true
+            },
+            "logMqtt": false,
+            "topics": {
+                "getOn": "/devices/wb-mio-gpio_211:5/controls/K8",
+                "setOn": "/devices/wb-mio-gpio_211:5/controls/K8/on"
+            },
+            "integerValue": true,
+            "onlineValue": "Online"
         }
     ],
     "platforms": []
