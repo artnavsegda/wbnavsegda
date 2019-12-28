@@ -184,14 +184,14 @@
             "name": "Balcony heated floor",
             "logMqtt": true,
             "topics": {
-                "setActive": "/devices/heater_control/controls/active/on",
-                "getActive": "/devices/heater_control/controls/active",
-                "getCurrentHeaterCoolerState": "/devices/heater_control/controls/current",
-                "setTargetHeaterCoolerState": "/devices/heater_control/controls/target/on",
-                "getTargetHeaterCoolerState": "/devices/heater_control/controls/target",
+                "setActive": "/devices/balcony_heater_control/controls/active/on",
+                "getActive": "/devices/balcony_heater_control/controls/active",
+                "getCurrentHeaterCoolerState": "/devices/balcony_heater_control/controls/current",
+                "setTargetHeaterCoolerState": "/devices/balcony_heater_control/controls/target/on",
+                "getTargetHeaterCoolerState": "/devices/balcony_heater_control/controls/target",
                 "getCurrentTemperature": "/devices/wb-w1/controls/28-000008f2ce1a",
-                "setHeatingThresholdTemperature": "/devices/heater_control/controls/target_temperature/on",
-                "getHeatingThresholdTemperature": "/devices/heater_control/controls/target_temperature"
+                "setHeatingThresholdTemperature": "/devices/balcony_heater_control/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/balcony_heater_control/controls/target_temperature"
             },
             "integerValue": true,
             "currentHeaterCoolerValues": [
@@ -216,14 +216,14 @@
             "name": "Bath heated floor",
             "logMqtt": true,
             "topics": {
-                "setActive": "/devices/heater_control_bath/controls/active/on",
-                "getActive": "/devices/heater_control_bath/controls/active",
-                "getCurrentHeaterCoolerState": "/devices/heater_control_bath/controls/current",
-                "setTargetHeaterCoolerState": "/devices/heater_control_bath/controls/target/on",
-                "getTargetHeaterCoolerState": "/devices/heater_control_bath/controls/target",
+                "setActive": "/devices/bathroom_heater_control/controls/active/on",
+                "getActive": "/devices/bathroom_heater_control/controls/active",
+                "getCurrentHeaterCoolerState": "/devices/bathroom_heater_control/controls/current",
+                "setTargetHeaterCoolerState": "/devices/bathroom_heater_control/controls/target/on",
+                "getTargetHeaterCoolerState": "/devices/bathroom_heater_control/controls/target",
                 "getCurrentTemperature": "/devices/wb-w1/controls/28-00000a42fdb0",
-                "setHeatingThresholdTemperature": "/devices/heater_control_bath/controls/target_temperature/on",
-                "getHeatingThresholdTemperature": "/devices/heater_control_bath/controls/target_temperature"
+                "setHeatingThresholdTemperature": "/devices/bathroom_heater_control/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/bathroom_heater_control/controls/target_temperature"
             },
             "integerValue": true,
             "currentHeaterCoolerValues": [
@@ -590,21 +590,6 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
-            "name": "термостат гостинная",
-            "mqttPubOptions": {
-                "retain": true
-            },
-            "logMqtt": false,
-            "topics": {
-                "getOn": "/devices/wb-mio-gpio_209:5/controls/K4",
-                "setOn": "/devices/wb-mio-gpio_209:5/controls/K4/on"
-            },
-            "integerValue": true,
-            "onlineValue": "Online"
-        },
-        {
-            "accessory": "mqttthing",
             "type": "heaterCooler",
             "name": "термостат гостинная",
             "logMqtt": true,
@@ -637,48 +622,99 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "heaterCooler",
             "name": "термостат Кухня",
-            "mqttPubOptions": {
-                "retain": true
-            },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
-                "getOn": "/devices/wb-mio-gpio_209:5/controls/K5",
-                "setOn": "/devices/wb-mio-gpio_209:5/controls/K5/on"
+                "setActive": "/devices/kitchen_heater_control/controls/active/on",
+                "getActive": "/devices/kitchen_heater_control/controls/active",
+                "getCurrentHeaterCoolerState": "/devices/kitchen_heater_control/controls/current",
+                "setTargetHeaterCoolerState": "/devices/kitchen_heater_control/controls/target/on",
+                "getTargetHeaterCoolerState": "/devices/kitchen_heater_control/controls/target",
+                "getCurrentTemperature": "/devices/wb-w1/controls/28-00000a420768",
+                "setHeatingThresholdTemperature": "/devices/kitchen_heater_control/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/kitchen_heater_control/controls/target_temperature"
             },
             "integerValue": true,
-            "onlineValue": "Online"
+            "currentHeaterCoolerValues": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "targetHeaterCoolerValues": [
+                0,
+                1,
+                2
+            ],
+            "restrictHeaterCoolerState": [
+                1
+            ],
+            "maxTemperature": 30
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "heaterCooler",
             "name": "термостат Кабинет",
-            "mqttPubOptions": {
-                "retain": true
-            },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
-                "getOn": "/devices/wb-mio-gpio_209:5/controls/K6",
-                "setOn": "/devices/wb-mio-gpio_209:5/controls/K6/on"
+                "setActive": "/devices/cabinet_heater_control/controls/active/on",
+                "getActive": "/devices/cabinet_heater_control/controls/active",
+                "getCurrentHeaterCoolerState": "/devices/cabinet_heater_control/controls/current",
+                "setTargetHeaterCoolerState": "/devices/cabinet_heater_control/controls/target/on",
+                "getTargetHeaterCoolerState": "/devices/cabinet_heater_control/controls/target",
+                "getCurrentTemperature": "/devices/wb-w1/controls/28-00000a42bbf3",
+                "setHeatingThresholdTemperature": "/devices/cabinet_heater_control/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/cabinet_heater_control/controls/target_temperature"
             },
             "integerValue": true,
-            "onlineValue": "Online"
+            "currentHeaterCoolerValues": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "targetHeaterCoolerValues": [
+                0,
+                1,
+                2
+            ],
+            "restrictHeaterCoolerState": [
+                1
+            ],
+            "maxTemperature": 30
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "heaterCooler",
             "name": "термостат Спальня",
-            "mqttPubOptions": {
-                "retain": true
-            },
-            "logMqtt": false,
+            "logMqtt": true,
             "topics": {
-                "getOn": "/devices/wb-mio-gpio_209:5/controls/K7",
-                "setOn": "/devices/wb-mio-gpio_209:5/controls/K7/on"
+                "setActive": "/devices/bedroom_heater_control/controls/active/on",
+                "getActive": "/devices/bedroom_heater_control/controls/active",
+                "getCurrentHeaterCoolerState": "/devices/bedroom_heater_control/controls/current",
+                "setTargetHeaterCoolerState": "/devices/bedroom_heater_control/controls/target/on",
+                "getTargetHeaterCoolerState": "/devices/bedroom_heater_control/controls/target",
+                "getCurrentTemperature": "/devices/wb-w1/controls/28-00000a4054fa",
+                "setHeatingThresholdTemperature": "/devices/bedroom_heater_control/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/bedroom_heater_control/controls/target_temperature"
             },
             "integerValue": true,
-            "onlineValue": "Online"
+            "currentHeaterCoolerValues": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "targetHeaterCoolerValues": [
+                0,
+                1,
+                2
+            ],
+            "restrictHeaterCoolerState": [
+                1
+            ],
+            "maxTemperature": 30
         },
         {
             "accessory": "mqttthing",
