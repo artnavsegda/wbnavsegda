@@ -108,7 +108,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "windowCovering",
+            "type": "window",
             "name": "Shade Cabinet",
             "logMqtt": true,
             "topics": {
@@ -126,7 +126,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "windowCovering",
+            "type": "window",
             "name": "Shade Kitchen",
             "logMqtt": true,
             "topics": {
@@ -144,7 +144,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "windowCovering",
+            "type": "window",
             "name": "Shade Livingroom One",
             "logMqtt": true,
             "topics": {
