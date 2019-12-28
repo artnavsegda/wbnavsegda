@@ -334,7 +334,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "outlet",
             "name": "управляемая розетка гостинная",
             "mqttPubOptions": {
                 "retain": true
@@ -515,7 +515,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "outlet",
             "name": "управляемая розетка спальня",
             "mqttPubOptions": {
                 "retain": true
