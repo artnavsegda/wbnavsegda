@@ -1,10 +1,10 @@
 var heaters = [
   {name: "balcony", sensor: "28-000008f2ce1a"},
-  {name: "bathroom", sensor: },
-  {name: "livingroom", sensor:},
-  {name: "kitchen", sensor:},
-  {name: "cabinet", sensor:},
-  {name: "bedroom", sensor:}
+  {name: "bathroom", sensor: "28-00000a42fdb0"},
+  {name: "livingroom", sensor: "28-00000a41fa1c"},
+  {name: "kitchen", sensor: "28-00000a420768"},
+  {name: "cabinet", sensor: "28-00000a42bbf3"},
+  {name: "bedroom", sensor: "28-00000a4054fa"}
 ];
 
 
