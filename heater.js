@@ -1,5 +1,13 @@
-// place your rules here or add more .js files in this directory
-log("reload");
+var heaters = [
+  {name: "balcony", sensor: "28-000008f2ce1a"},
+  {name: "bathroom", sensor: },
+  {name: "livingroom", sensor:},
+  {name: "kitchen", sensor:},
+  {name: "cabinet", sensor:},
+  {name: "bedroom", sensor:}
+];
+
+
 
 //balcony
 
