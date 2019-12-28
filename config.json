@@ -605,6 +605,38 @@
         },
         {
             "accessory": "mqttthing",
+            "type": "heaterCooler",
+            "name": "термостат гостинная",
+            "logMqtt": true,
+            "topics": {
+                "setActive": "/devices/livingroom_heater_control/controls/active/on",
+                "getActive": "/devices/livingroom_heater_control/controls/active",
+                "getCurrentHeaterCoolerState": "/devices/livingroom_heater_control/controls/current",
+                "setTargetHeaterCoolerState": "/devices/livingroom_heater_control/controls/target/on",
+                "getTargetHeaterCoolerState": "/devices/livingroom_heater_control/controls/target",
+                "getCurrentTemperature": "/devices/wb-w1/controls/28-00000a41fa1c",
+                "setHeatingThresholdTemperature": "/devices/livingroom_heater_control/controls/target_temperature/on",
+                "getHeatingThresholdTemperature": "/devices/livingroom_heater_control/controls/target_temperature"
+            },
+            "integerValue": true,
+            "currentHeaterCoolerValues": [
+                0,
+                1,
+                2,
+                3
+            ],
+            "targetHeaterCoolerValues": [
+                0,
+                1,
+                2
+            ],
+            "restrictHeaterCoolerState": [
+                1
+            ],
+            "maxTemperature": 30
+        },
+        {
+            "accessory": "mqttthing",
             "type": "lightbulb",
             "name": "термостат Кухня",
             "mqttPubOptions": {
