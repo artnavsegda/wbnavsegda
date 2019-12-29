@@ -12,7 +12,7 @@
         "comment": "This section is used to control the range of ports that separate accessory (like camera or television) should be bind to."
     },
     "accessories": [
-      {
+        {
             "accessory": "mqttthing",
             "type": "carbonDioxideSensor",
             "name": "Датчик CO2",
@@ -459,13 +459,14 @@
             "mqttPubOptions": {
                 "retain": true
             },
+            "integerValue": true,
+            "onValue": "0",
+            "offValue": "1",
             "logMqtt": true,
             "topics": {
                 "getOn": "/devices/wb-mio-gpio_211:5/controls/K7",
                 "setOn": "/devices/wb-mio-gpio_211:5/controls/K7/on"
             },
-            "onValue:": "0",
-            "offValue": "1",
             "onlineValue": "Online"
         },
         {
@@ -720,6 +721,21 @@
             "accessory": "mqttthing",
             "type": "lightbulb",
             "name": "Камин",
+            "mqttPubOptions": {
+                "retain": true
+            },
+            "logMqtt": false,
+            "topics": {
+                "getOn": "/devices/wb-mio-gpio_209:5/controls/K3",
+                "setOn": "/devices/wb-mio-gpio_209:5/controls/K3/on"
+            },
+            "integerValue": true,
+            "onlineValue": "Online"
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "lightbulb",
+            "name": "Подсветка раковины",
             "mqttPubOptions": {
                 "retain": true
             },
