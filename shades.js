@@ -81,7 +81,7 @@ shades.forEach(function (v) {
             	dev[devname]["state"] = 0;
             }
             dev["wb-mio-gpio_209:"+v.dev]["ON"+v.out] = 1;
-            dev["wb-mio-gpio_209:"+v.dev]["DIR"+v.out] = 1;
+            dev["wb-mio-gpio_209:"+v.dev]["DIR"+v.out] = 0;
           }
           else if (dev[devname]["current"] < dev[devname]["target"])
           {
@@ -91,7 +91,7 @@ shades.forEach(function (v) {
             	dev[devname]["state"] = 1;
             }
             dev["wb-mio-gpio_209:"+v.dev]["ON"+v.out] = 1;
-            dev["wb-mio-gpio_209:"+v.dev]["DIR"+v.out] = 0;
+            dev["wb-mio-gpio_209:"+v.dev]["DIR"+v.out] = 1;
           }
         },v.speed);
       }
