@@ -51,23 +51,9 @@ heaters.forEach(function (v) {
   });
 
   defineRule(v.name + "_heater_control_rule", {
-    whenChanged: "wb-w1/" + v.sensor,
+    whenChanged: ["wb-w1/" + v.sensor, v.name + "_heater_control/target_temperature", v.name + "_heater_control/active"],
     then: function (newValue, devName, cellName) {
       heater_control(v.name + "_heater_control", v.sensor, v.out);
-    }
-  });
-
-  defineRule(v.name + "_heater_control_rule_back", {
-    whenChanged: v.name + "_heater_control/target_temperature",
-    then: function (newValue, devName, cellName) {
-      heater_control(v.name + "_heater_control", v.sensor, v.out);
-    }
-  });
-
-  defineRule(v.name + "_heater_control_rule_active", {
-    whenChanged: v.name + "_heater_control/active",
-    then: function (newValue, devName, cellName) {
-      heater_control();
     }
   });
 
