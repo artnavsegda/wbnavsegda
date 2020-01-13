@@ -40,9 +40,16 @@ shades.forEach(function (v) {
   defineRule(devname + " shade up", {
       whenChanged: "wb-mio-gpio_" + v.in.addr + ":" + v.in.dev + "/Counter " + v.in.up,
       then: function(newValue, devName, cellName) {
-        if (!dev["wb-mio-gpio_" + v.in.addr + ":"+v.in.dev]["DR"+v.in.up])
+        if (newValue % 2 == 0)
         {
-          dev[devname]["target"] = 0;
+          if (dev[devname]["state"] == 2)
+          {
+            dev[devname]["target"] = 0;
+          }
+          else
+          {
+            dev[devname]["target"] = dev[devname]["current"];
+          }
         }
       }
     }
@@ -51,9 +58,16 @@ shades.forEach(function (v) {
   defineRule(devname + " shade down", {
       whenChanged: "wb-mio-gpio_" + v.in.addr + ":" +v.in.dev + "/Counter " +v.in.down,
       then: function(newValue, devName, cellName) {
-        if (!dev["wb-mio-gpio_" + v.in.addr + ":"+v.in.dev]["DR"+v.in.down])
+        if (newValue % 2 == 0)
         {
-          dev[devname]["target"] = 100;
+          if (dev[devname]["state"] == 2)
+          {
+            dev[devname]["target"] = 100;
+          }
+          else
+          {
+            dev[devname]["target"] = dev[devname]["current"];
+          }
         }
       }
     }
