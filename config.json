@@ -568,8 +568,8 @@
             },
             "logMqtt": true,
             "topics": {
-                "getOn": "/devices/wb-mio-gpio_211:6/controls/K7",
-                "setOn": "/devices/wb-mio-gpio_211:6/controls/K7/on"
+                "getOn": "/devices/wb-mio-gpio_211:5/controls/K8",
+                "setOn": "/devices/wb-mio-gpio_211:5/controls/K8/on"
             },
             "integerValue": true,
             "onlineValue": "Online"
@@ -726,23 +726,8 @@
             },
             "logMqtt": false,
             "topics": {
-                "getOn": "/devices/wb-mio-gpio_209:5/controls/K3",
-                "setOn": "/devices/wb-mio-gpio_209:5/controls/K3/on"
-            },
-            "integerValue": true,
-            "onlineValue": "Online"
-        },
-        {
-            "accessory": "mqttthing",
-            "type": "lightbulb",
-            "name": "Подсветка раковины",
-            "mqttPubOptions": {
-                "retain": true
-            },
-            "logMqtt": false,
-            "topics": {
-                "getOn": "/devices/wb-mio-gpio_211:5/controls/K8",
-                "setOn": "/devices/wb-mio-gpio_211:5/controls/K8/on"
+                "getOn": "/devices/wb-gpio/controls/A2_OUT",
+                "setOn": "/devices/wb-gpio/controls/A2_OUT/on"
             },
             "integerValue": true,
             "onlineValue": "Online"
