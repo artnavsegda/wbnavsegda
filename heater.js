@@ -49,7 +49,7 @@ heaters.forEach(function (v) {
       }
   });
 
-  heater_control(v.name + "_heater_control", v.sensor, v.out, v.invert);
+//  heater_control(v.name + "_heater_control", v.sensor, v.out, v.invert);
 
   defineRule(v.name + "_heater_control_rule", {
     whenChanged: ["wb-w1/" + v.sensor, v.name + "_heater_control/target_temperature", v.name + "_heater_control/active"],
