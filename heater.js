@@ -1,19 +1,19 @@
 var heaters = [
-  {name: "bathroom", sensor: "28-00000a42fdb0", out: 1},
-  {name: "balcony", sensor: "28-000008f2ce1a", out: 2},
-  {name: "livingroom", sensor: "28-00000a41fa1c", out: 4},
-  {name: "kitchen", sensor: "28-00000a420768", out: 5},
-  {name: "cabinet", sensor: "28-00000a42bbf3", out: 6},
-  {name: "bedroom", sensor: "28-00000a4054fa", out: 7}
+  {name: "bathroom", sensor: "28-00000a42fdb0", out: 1, invert: false},
+  {name: "balcony", sensor: "28-000008f2ce1a", out: 2, invert: false},
+  {name: "livingroom", sensor: "28-00000a41fa1c", out: 4, invert: true},
+  {name: "kitchen", sensor: "28-00000a420768", out: 5, invert: true},
+  {name: "cabinet", sensor: "28-00000a42bbf3", out: 6, invert: true},
+  {name: "bedroom", sensor: "28-00000a4054fa", out: 7, invert: true}
 ];
 
-function heater_control(device, sensor, out)
+function heater_control(device, sensor, out, invert)
 {
   if (dev[device]["active"] == 1) {
     if ( dev["wb-w1"][sensor] > dev[device]["target_temperature"]) {
-      dev["wb-mio-gpio_209:5"]["K" + out] = 0;
+      dev["wb-mio-gpio_209:5"]["K" + out] = invert;
     } else {
-      dev["wb-mio-gpio_209:5"]["K" + out] = 1;
+      dev["wb-mio-gpio_209:5"]["K" + out] = !invert;
     }
   }
   else {
@@ -50,12 +50,12 @@ heaters.forEach(function (v) {
       }
   });
 
-  heater_control(v.name + "_heater_control", v.sensor, v.out);
+  heater_control(v.name + "_heater_control", v.sensor, v.out, v.invert);
 
   defineRule(v.name + "_heater_control_rule", {
     whenChanged: ["wb-w1/" + v.sensor, v.name + "_heater_control/target_temperature", v.name + "_heater_control/active"],
     then: function (newValue, devName, cellName) {
-      heater_control(v.name + "_heater_control", v.sensor, v.out);
+      heater_control(v.name + "_heater_control", v.sensor, v.out, v.invert);
     }
   });
 
