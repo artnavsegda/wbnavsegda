@@ -9,7 +9,7 @@ var heaters = [
 
 function heater_control(device, sensor, out, invert)
 {
-  if (dev[device]["active"] == 1) {
+  if (dev[device]["active"]) {
     if ( dev["wb-w1"][sensor] > dev[device]["target_temperature"]) {
       dev["wb-mio-gpio_209:5"]["K" + out] = invert;
     } else {
@@ -32,9 +32,8 @@ heaters.forEach(function (v) {
             max : 100
         },
         active: {
-              type: "range",
-              value : 1,
-              max : 1
+              type: "switch",
+              value : true
           },
         current: {
             type: "range",
