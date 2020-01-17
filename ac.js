@@ -7,13 +7,19 @@ defineVirtualDevice("ac_control", {
       },
       temperature: {
           type: "range",
-          value: 10
+          value: 10,
+          max: 100
       },
       mode: {
           type: "range",
           value: 4,
           max: 4
       },
+      rotation: {
+          type: "range",
+          value: 0,
+          max: 100
+      }
     }
 });
 
