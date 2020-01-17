@@ -47,7 +47,7 @@
                 "getCurrentHeaterCoolerState": "/devices/ac_control/controls/mode",
                 "setTargetHeaterCoolerState": "/devices/ac_control/controls/mode/on",
                 "getTargetHeaterCoolerState": "/devices/ac_control/controls/mode",
-                "getCurrentTemperature": "/devices/ac_control/controls/temperature",
+                "getCurrentTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Reference",
                 "setCoolingThresholdTemperature": "/devices/ac_control/controls/temperature/on",
                 "getCoolingThresholdTemperature": "/devices/ac_control/controls/temperature",
                 "setHeatingThresholdTemperature": "/devices/ac_control/controls/temperature/on",
@@ -66,10 +66,6 @@
                 0,
                 1,
                 4
-            ],
-            "restrictHeaterCoolerState": [
-                1,
-                2
             ],
             "minTemperature": 18,
             "maxTemperature": 30
