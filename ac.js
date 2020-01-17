@@ -26,6 +26,7 @@ defineVirtualDevice("ac_control", {
           max: 4
       },
       targetmode: {
+          readonly: true,
           type: "range",
           value: 4,
           max: 4

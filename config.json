@@ -44,7 +44,7 @@
             "topics": {
                 "setActive": "/devices/ac_control/controls/enabled/on",
                 "getActive": "/devices/ac_control/controls/enabled",
-                "getCurrentHeaterCoolerState": "/devices/ac_control/controls/mode",
+                "getCurrentHeaterCoolerState": "/devices/ac_control/controls/targetmode",
                 "setTargetHeaterCoolerState": "/devices/ac_control/controls/mode/on",
                 "getTargetHeaterCoolerState": "/devices/ac_control/controls/mode",
                 "getCurrentTemperature": "/devices/mh-rc-mbs-1_1/controls/AC unit Temperature Reference",
