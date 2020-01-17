@@ -10,6 +10,16 @@ defineVirtualDevice("ac_control", {
           value: 10,
           max: 100
       },
+      heat: {
+          type: "range",
+          value: 10,
+          max: 100
+      },
+      cool: {
+          type: "range",
+          value: 10,
+          max: 100
+      },
       mode: {
           type: "range",
           value: 4,
@@ -32,6 +42,20 @@ defineRule("ac_control_enable", {
 
 defineRule("ac_control_temperature", {
   whenChanged: "ac_control/temperature",
+  then: function (newValue, devName, cellName)  {
+	dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = newValue;
+  }
+});
+
+defineRule("ac_control_heat", {
+  whenChanged: "ac_control/heat",
+  then: function (newValue, devName, cellName)  {
+	dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = newValue;
+  }
+});
+
+defineRule("ac_control_cool", {
+  whenChanged: "ac_control/cool",
   then: function (newValue, devName, cellName)  {
 	dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = newValue;
   }
