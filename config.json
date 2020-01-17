@@ -204,8 +204,8 @@
             ],
             "targetHeaterCoolerValues": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
             "restrictHeaterCoolerState": [
                 1
@@ -236,8 +236,8 @@
             ],
             "targetHeaterCoolerValues": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
             "restrictHeaterCoolerState": [
                 1
@@ -630,8 +630,8 @@
             ],
             "targetHeaterCoolerValues": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
             "restrictHeaterCoolerState": [
                 1
@@ -662,8 +662,8 @@
             ],
             "targetHeaterCoolerValues": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
             "restrictHeaterCoolerState": [
                 1
@@ -694,8 +694,8 @@
             ],
             "targetHeaterCoolerValues": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
             "restrictHeaterCoolerState": [
                 1
@@ -726,8 +726,8 @@
             ],
             "targetHeaterCoolerValues": [
                 0,
-                1,
-                2
+                2,
+                3
             ],
             "restrictHeaterCoolerState": [
                 1

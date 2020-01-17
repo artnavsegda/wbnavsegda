@@ -61,18 +61,7 @@ heaters.forEach(function (v) {
   defineRule(v.name + "_heater_control_target", {
     whenChanged: v.name + "_heater_control/target",
     then: function (newValue, devName, cellName)  {
-      switch(newValue)
-      {
-        case 0:
-          dev[v.name + "_heater_control"]["current"] = 1;
-         break;
-        case 1:
-          dev[v.name + "_heater_control"]["current"] = 2;
-         break;
-        case 2:
-          dev[v.name + "_heater_control"]["current"] = 3;
-        break;
-      }
+      dev[v.name + "_heater_control"]["current"] = newValue;
     }
   });
 });
