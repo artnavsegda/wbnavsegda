@@ -40,13 +40,13 @@ heaters.forEach(function (v) {
           },
         current: {
             type: "range",
-            value: 1,
+            value: 2,
             max: 3,
             readonly: true
         },
         target: {
             type: "range",
-            value: 0,
+            value: 2,
             max: 2
         }
       }
