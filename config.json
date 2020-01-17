@@ -382,6 +382,21 @@
         {
             "accessory": "mqttthing",
             "type": "lightbulb",
+            "name": "трековые светильники кухня гостинная дубль",
+            "mqttPubOptions": {
+                "retain": true
+            },
+            "logMqtt": true,
+            "topics": {
+                "getOn": "/devices/wb-mio-gpio_211:5/controls/K1",
+                "setOn": "/devices/wb-mio-gpio_211:5/controls/K1/on"
+            },
+            "integerValue": true,
+            "onlineValue": "Online"
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "lightbulb",
             "name": "подсветка рабочей зоны",
             "mqttPubOptions": {
                 "retain": true
