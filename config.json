@@ -70,7 +70,9 @@
             "restrictHeaterCoolerState": [
                 1,
                 2
-            ]
+            ],
+            "minTemperature": 18,
+            "maxTemperature": 30
         },
         {
             "accessory": "mqttthing",
@@ -210,6 +212,7 @@
             "restrictHeaterCoolerState": [
                 1
             ],
+            "minTemperature": 18,
             "maxTemperature": 30
         },
         {
@@ -242,6 +245,7 @@
             "restrictHeaterCoolerState": [
                 1
             ],
+            "minTemperature": 18,
             "maxTemperature": 30
         },
         {
@@ -636,6 +640,7 @@
             "restrictHeaterCoolerState": [
                 1
             ],
+            "minTemperature": 18,
             "maxTemperature": 30
         },
         {
@@ -668,6 +673,7 @@
             "restrictHeaterCoolerState": [
                 1
             ],
+            "minTemperature": 18,
             "maxTemperature": 30
         },
         {
@@ -700,6 +706,7 @@
             "restrictHeaterCoolerState": [
                 1
             ],
+            "minTemperature": 18,
             "maxTemperature": 30
         },
         {
@@ -732,6 +739,7 @@
             "restrictHeaterCoolerState": [
                 1
             ],
+            "minTemperature": 18,
             "maxTemperature": 30
         },
         {
