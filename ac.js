@@ -37,6 +37,13 @@ defineRule("ac_control_temperature", {
   }
 });
 
+defineRule("ac_control_rotation", {
+  whenChanged: "ac_control/rotation",
+  then: function (newValue, devName, cellName)  {
+	dev["mh-rc-mbs-1_1"]["AC unit Fan Speed"] = Math.floor(newValue/25);
+  }
+});
+
 defineRule("ac_control_mode", {
   whenChanged: "ac_control/mode",
   then: function (newValue, devName, cellName)  {
