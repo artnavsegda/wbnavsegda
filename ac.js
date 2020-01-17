@@ -25,6 +25,11 @@ defineVirtualDevice("ac_control", {
           value: 4,
           max: 4
       },
+      targetmode: {
+          type: "range",
+          value: 4,
+          max: 4
+      },
       rotation: {
           type: "range",
           value: 0,
@@ -50,14 +55,24 @@ defineRule("ac_control_temperature", {
 defineRule("ac_control_heat", {
   whenChanged: "ac_control/heat",
   then: function (newValue, devName, cellName)  {
-	dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = newValue;
+    if (dev["ac_control"]["mode"] == 0)
+    {
+      ac_control(newValue);
+    }
+    else
+	   dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = newValue;
   }
 });
 
 defineRule("ac_control_cool", {
   whenChanged: "ac_control/cool",
   then: function (newValue, devName, cellName)  {
-	dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = newValue;
+    if (dev["ac_control"]["mode"] == 0)
+    {
+      ac_control(newValue);
+    }
+    else
+	   dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = newValue;
   }
 });
 
@@ -68,9 +83,47 @@ defineRule("ac_control_rotation", {
   }
 });
 
+function ac_control(control_temperature)
+{
+  if (control_temperature > dev["ac_control"]["cool"])
+  {
+    dev["ac_control"]["targetmode"] = 4;
+    dev["mh-rc-mbs-1_1"]["AC unit mode"] = 4;
+    dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = dev["ac_control"]["cool"];
+  }
+  else if (control_temperature < dev["ac_control"]["heat"])
+  {
+    dev["ac_control"]["targetmode"] = 1;
+    dev["mh-rc-mbs-1_1"]["AC unit mode"] = 1;
+    dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = dev["ac_control"]["heat"];
+  }
+  else
+  {
+    dev["ac_control"]["targetmode"] = 3;
+    dev["mh-rc-mbs-1_1"]["AC unit mode"] = 3;
+    dev["mh-rc-mbs-1_1"]["AC unit Temperature Setpoint"] = dev["mh-rc-mbs-1_1"]["AC unit Temperature Reference"];
+  }
+}
+
 defineRule("ac_control_mode", {
   whenChanged: "ac_control/mode",
   then: function (newValue, devName, cellName)  {
-	dev["mh-rc-mbs-1_1"]["AC unit mode"] = newValue;
+    if (newValue == 0)
+    {
+      ac_control(dev["mh-rc-mbs-1_1"]["AC unit Temperature Reference"]);
+    }
+    else
+      dev["mh-rc-mbs-1_1"]["AC unit mode"] = newValue;
+      dev["ac_control"]["targetmode"] = newValue;
+  }
+});
+
+defineRule("ac_control_auto", {
+  whenChanged: "mh-rc-mbs-1_1/AC unit Temperature Reference",
+  then: function (newValue, devName, cellName)  {
+    if (dev["ac_control"]["mode"] == 0)
+    {
+      ac_control(newValue);
+    }
   }
 });
