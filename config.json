@@ -52,8 +52,8 @@
                 "getCoolingThresholdTemperature": "/devices/ac_control/controls/temperature",
                 "setHeatingThresholdTemperature": "/devices/ac_control/controls/temperature/on",
                 "getHeatingThresholdTemperature": "/devices/ac_control/controls/temperature",
-                "setRotationSpeed":               "/devices/ac_control/controls/rotation/on",
-                "getRotationSpeed":               "/devices/ac_control/controls/rotation"
+                "setRotationSpeed": "/devices/ac_control/controls/rotation/on",
+                "getRotationSpeed": "/devices/ac_control/controls/rotation"
             },
             "integerValue": true,
             "currentHeaterCoolerValues": [
@@ -747,6 +747,22 @@
                 "setOn": "/devices/wb-gpio/controls/A2_OUT/on"
             },
             "integerValue": true,
+            "onlineValue": "Online"
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "switch",
+            "name": "Поджиг камина",
+            "mqttPubOptions": {
+                "retain": true
+            },
+            "logMqtt": false,
+            "topics": {
+                "getOn": "/devices/wb-gpio/controls/A1_OUT",
+                "setOn": "/devices/wb-gpio/controls/A1_OUT/on"
+            },
+            "integerValue": true,
+            "turnOffAfterms": 1000,
             "onlineValue": "Online"
         }
     ],
