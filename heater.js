@@ -12,12 +12,15 @@ function heater_control(device, sensor, out, invert)
   if (dev[device]["active"]) {
     if ( dev["wb-w1"][sensor] > dev[device]["target_temperature"]) {
       dev["wb-mio-gpio_209:5"]["K" + out] = invert;
+      dev[device]["current"] = 1;
     } else {
       dev["wb-mio-gpio_209:5"]["K" + out] = !invert;
+      dev[device]["current"] = 2;
     }
   }
   else {
     dev["wb-mio-gpio_209:5"]["K" + out] = 0;
+    dev[device]["current"] = 0;
   }
 }
 
