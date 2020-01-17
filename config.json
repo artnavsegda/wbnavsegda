@@ -736,7 +736,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "outlet",
             "name": "Камин",
             "mqttPubOptions": {
                 "retain": true
