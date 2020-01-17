@@ -593,7 +593,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "fan",
             "name": "вытяжка",
             "mqttPubOptions": {
                 "retain": true
