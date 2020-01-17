@@ -51,7 +51,9 @@
                 "setCoolingThresholdTemperature": "/devices/ac_control/controls/temperature/on",
                 "getCoolingThresholdTemperature": "/devices/ac_control/controls/temperature",
                 "setHeatingThresholdTemperature": "/devices/ac_control/controls/temperature/on",
-                "getHeatingThresholdTemperature": "/devices/ac_control/controls/temperature"
+                "getHeatingThresholdTemperature": "/devices/ac_control/controls/temperature",
+                "setRotationSpeed":               "/devices/ac_control/controls/rotation/on",
+                "getRotationSpeed":               "/devices/ac_control/controls/rotation"
             },
             "integerValue": true,
             "currentHeaterCoolerValues": [
