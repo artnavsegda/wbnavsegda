@@ -779,7 +779,10 @@
             "logMqtt": false,
             "topics": {
                 "getOn": "/devices/fake_outlet/controls/enabled",
-                "setOn": "/devices/fake_outlet/controls/enabled/on"
+                "setOn": "/devices/fake_outlet/controls/enabled/on",
+                "getWatts": "/devices/wb-map6s_22/controls/P 1",
+                "getVolts": "/devices/wb-map6s_22/controls/Urms",
+                "getAmperes": "/devices/wb-map6s_22/controls/Irms 1"
             },
             "integerValue": true,
             "onlineValue": "Online",
