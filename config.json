@@ -73,7 +73,7 @@
         {
             "accessory": "mqttthing",
             "type": "windowCovering",
-            "name": "Shade Bathroom",
+            "name": "Шторы Ванная",
             "logMqtt": true,
             "topics": {
                 "getCurrentPosition": "/devices/shade bathroom/controls/current",
