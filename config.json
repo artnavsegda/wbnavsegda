@@ -787,7 +787,22 @@
             "integerValue": true,
             "onlineValue": "Online",
             "history": true
-        }
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "lightbulb",
+            "name": "Питание веб-камеры",
+            "mqttPubOptions": {
+                "retain": true
+            },
+            "logMqtt": true,
+            "topics": {
+                "getOn": "/devices/wb-mio-gpio_209:5/controls/K3",
+                "setOn": "/devices/wb-mio-gpio_209:5/controls/K3/on"
+            },
+            "integerValue": true,
+            "onlineValue": "Online"
+        },
     ],
     "platforms": []
 }
