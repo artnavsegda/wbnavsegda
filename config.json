@@ -790,7 +790,7 @@
         },
         {
             "accessory": "mqttthing",
-            "type": "lightbulb",
+            "type": "outlet",
             "name": "Питание веб-камеры",
             "mqttPubOptions": {
                 "retain": true
