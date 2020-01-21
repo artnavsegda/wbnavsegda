@@ -768,6 +768,22 @@
             "integerValue": true,
             "turnOffAfterms": 1000,
             "onlineValue": "Online"
+        },
+        {
+            "accessory": "mqttthing",
+            "type": "outlet",
+            "name": "Счетчик",
+            "mqttPubOptions": {
+                "retain": true
+            },
+            "logMqtt": false,
+            "topics": {
+                "getOn": "/devices/fake_outlet/controls/enabled",
+                "setOn": "/devices/fake_outlet/controls/enabled/on"
+            },
+            "integerValue": true,
+            "onlineValue": "Online",
+            "history": true
         }
     ],
     "platforms": []
