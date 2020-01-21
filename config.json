@@ -802,7 +802,7 @@
             },
             "integerValue": true,
             "onlineValue": "Online"
-        },
+        }
     ],
     "platforms": []
 }
