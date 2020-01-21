@@ -39,7 +39,7 @@
         {
             "accessory": "mqttthing",
             "type": "heaterCooler",
-            "name": "My Air Conditioner",
+            "name": "Кондиционер",
             "logMqtt": true,
             "topics": {
                 "setActive": "/devices/ac_control/controls/enabled/on",
@@ -91,7 +91,7 @@
         {
             "accessory": "mqttthing",
             "type": "windowCovering",
-            "name": "Shade Bedroom",
+            "name": "Шторы Спальня",
             "logMqtt": true,
             "topics": {
                 "getCurrentPosition": "/devices/shade bedroom/controls/current",
@@ -109,7 +109,7 @@
         {
             "accessory": "mqttthing",
             "type": "window",
-            "name": "Shade Cabinet",
+            "name": "Шторы Кабинет",
             "logMqtt": true,
             "topics": {
                 "getCurrentPosition": "/devices/shade cabinet/controls/current",
@@ -127,7 +127,7 @@
         {
             "accessory": "mqttthing",
             "type": "window",
-            "name": "Shade Kitchen",
+            "name": "Шторы Кухня",
             "logMqtt": true,
             "topics": {
                 "getCurrentPosition": "/devices/shade kitchen/controls/current",
@@ -145,7 +145,7 @@
         {
             "accessory": "mqttthing",
             "type": "window",
-            "name": "Shade Livingroom One",
+            "name": "Ролл-шторы Гостинная",
             "logMqtt": true,
             "topics": {
                 "getCurrentPosition": "/devices/shade livingroom one/controls/current",
@@ -163,7 +163,7 @@
         {
             "accessory": "mqttthing",
             "type": "windowCovering",
-            "name": "Shade Livingroom Two",
+            "name": "Шторы Гостинная Раздвижные",
             "logMqtt": true,
             "topics": {
                 "getCurrentPosition": "/devices/shade livingroom two/controls/current",
@@ -181,7 +181,7 @@
         {
             "accessory": "mqttthing",
             "type": "heaterCooler",
-            "name": "Balcony heated floor",
+            "name": "Теплый пол балкон",
             "logMqtt": true,
             "topics": {
                 "setActive": "/devices/balcony_heater_control/controls/active/on",
@@ -214,7 +214,7 @@
         {
             "accessory": "mqttthing",
             "type": "heaterCooler",
-            "name": "Bath heated floor",
+            "name": "Теплый пол ванная",
             "logMqtt": true,
             "topics": {
                 "setActive": "/devices/bathroom_heater_control/controls/active/on",
