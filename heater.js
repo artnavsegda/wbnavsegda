@@ -19,7 +19,7 @@ function heater_control(device, sensor, out, invert)
     }
   }
   else {
-    dev["wb-mio-gpio_209:5"]["K" + out] = 0;
+    dev["wb-mio-gpio_209:5"]["K" + out] = invert;
     dev[device]["current"] = 0;
   }
 }
@@ -68,3 +68,9 @@ heaters.forEach(function (v) {
     }
   });
 });
+
+setInterval(function() {
+	heaters.forEach(function() {
+      heater_control(element.name + "_heater_control", element.sensor, element.out, element.invert);
+    });
+}, 60000);
